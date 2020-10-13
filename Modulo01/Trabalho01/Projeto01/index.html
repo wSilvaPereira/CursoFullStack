@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trabalho prático 01</title>
+    <!-- <link rel="stylesheet" href="./css/reset.css" /> -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <form>
+      <table>
+        <tr>
+          <td>(R) Vermelho:</td>
+          <td>
+            <input id="rangeR" type="range" min="0" max="255" value="0" />
+          </td>
+          <td>
+            <input
+              class="inputNumber"
+              id="valueR"
+              type="number"
+              readonly
+              disabled
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>(G) Verde:</td>
+          <td>
+            <input id="rangeG" type="range" min="0" max="255" value="0" />
+          </td>
+          <td>
+            <input
+              class="inputNumber"
+              id="valueG"
+              type="number"
+              readonly
+              disabled
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>(B) Azul:</td>
+          <td>
+            <input id="rangeB" type="range" min="0" max="255" value="0" />
+          </td>
+          <td>
+            <input
+              class="inputNumber"
+              id="valueB"
+              type="number"
+              readonly
+              disabled
+            />
+          </td>
+        </tr>
+      </table>
+
+      <div id="resultColor"></div>
+    </form>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

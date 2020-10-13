@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Sofia"
+    />
+  </head>
+  <body>
+    <div>
+      <h1>Pesquisa de usuários</h1>
+      Busca
+      <div id="divBusca">
+        <input id="inputSearch" type="text" placeholder="Digite uma busca" />
+        <input id="buttonSearch" type="button" value="Buscar" />
+      </div>
+      <div class="results">
+        <div class="results-tabs">
+          <h2>(<span id="tabCountUsers"></span>) usuário(s) encontrado(s)</h2>
+          <div id="divUser"></div>
+        </div>
+        <div class="results-tabs">
+          <h2>Estatísticas</h2>
+          <div id="divStatistics">
+            <h5>Sexo masculino: <span id="tabCountMale"></span></h5>
+            <h5>Sexo feminino: <span id="tabCountFemale"></span></h5>
+            <h5>Soma das idades: <span id="tabTotalAge"></span></h5>
+            <h5>Média das idades: <span id="tabAverageAge"></span></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>

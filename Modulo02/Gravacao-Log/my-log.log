@@ -1,0 +1,48 @@
+2020-10-11T15:46:10.379Z [my-app] error: Error log
+2020-10-11T15:46:10.385Z [my-app] error: Error log
+2020-10-11T15:46:10.386Z [my-app] error: Error log
+2020-10-11T15:46:10.386Z [my-app] error: Error log
+2020-10-11T15:46:10.387Z [my-app] error: Error log
+2020-10-11T15:46:10.388Z [my-app] error: Error log
+2020-10-11T15:46:52.490Z [my-app] error: Error log
+2020-10-11T15:46:52.494Z [my-app] warn: warn log
+2020-10-11T15:46:52.506Z [my-app] info: info log
+2020-10-11T15:46:52.507Z [my-app] verbose: verbose log
+2020-10-11T15:46:52.508Z [my-app] debug: debug log
+2020-10-11T15:46:52.508Z [my-app] silly: silly log
+2020-10-11T15:47:22.010Z [my-app] error: Error log
+2020-10-11T15:47:22.014Z [my-app] warn: warn log
+2020-10-11T15:47:22.015Z [my-app] info: info log
+2020-10-11T15:47:22.015Z [my-app] verbose: verbose log
+2020-10-11T15:47:22.016Z [my-app] debug: debug log
+2020-10-11T15:47:22.016Z [my-app] silly: silly log
+2020-10-11T15:47:41.470Z [my-app] error: Error log
+2020-10-11T15:47:41.473Z [my-app] warn: warn log
+2020-10-11T15:47:41.490Z [my-app] info: info log
+2020-10-11T15:47:41.491Z [my-app] verbose: verbose log
+2020-10-11T15:47:41.492Z [my-app] debug: debug log
+2020-10-11T15:47:41.504Z [my-app] silly: silly log
+2020-10-11T15:47:41.504Z [my-app] info: Hello with parameter!
+2020-10-11T15:47:55.281Z [my-app] error: Error log
+2020-10-11T15:47:55.285Z [my-app] warn: warn log
+2020-10-11T15:48:01.170Z [my-app] error: Error log
+2020-10-11T15:48:01.174Z [my-app] warn: warn log
+2020-10-11T15:48:01.174Z [my-app] info: info log
+2020-10-11T15:48:01.175Z [my-app] verbose: verbose log
+2020-10-11T15:48:01.175Z [my-app] debug: debug log
+2020-10-11T15:48:01.189Z [my-app] silly: silly log
+2020-10-11T15:48:01.190Z [my-app] info: Hello with parameter!
+undefined [my-app] error: Error log
+undefined [my-app] warn: warn log
+undefined [my-app] info: info log
+undefined [my-app] verbose: verbose log
+undefined [my-app] debug: debug log
+undefined [my-app] silly: silly log
+undefined [my-app] info: Hello with parameter!
+2020-10-11T15:50:39.798Z [my-app] error: Error log
+2020-10-11T15:50:39.802Z [my-app] warn: warn log
+2020-10-11T15:50:39.803Z [my-app] info: info log
+2020-10-11T15:50:39.815Z [my-app] verbose: verbose log
+2020-10-11T15:50:39.816Z [my-app] debug: debug log
+2020-10-11T15:50:39.817Z [my-app] silly: silly log
+2020-10-11T15:50:39.818Z [my-app] info: Hello with parameter!

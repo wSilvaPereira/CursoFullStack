@@ -1,0 +1,13 @@
+ul {
+  list-style: none;
+}
+
+li {
+  /* font-style: italic; */
+  font-weight: bold;
+}
+
+.lista {
+  display: flex;
+  /* flex-direction: row; */
+}
