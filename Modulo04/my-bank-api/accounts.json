@@ -2,19 +2,14 @@
   "nextId": 4,
   "accounts": [
     {
-      "id": 1,
-      "name": "William da Silva Pereira",
-      "balance": 200
-    },
-    {
       "id": 2,
-      "name": "William da Silva Pereira",
-      "balance": 200
+      "name": "Ana Paula de Oliveira Paupitz",
+      "balance": 3000
     },
     {
       "id": 3,
-      "name": "William da Silva Pereira",
-      "balance": 200
+      "name": "William Pereira",
+      "balance": 100
     }
   ]
 }
