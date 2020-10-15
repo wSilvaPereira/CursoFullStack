@@ -1,0 +1,45 @@
+2020-10-15T00:14:09.464Z [my-bank-api] #info: API started.
+2020-10-15T00:14:20.025Z [my-bank-api] #info: API started.
+2020-10-15T00:14:45.670Z [my-bank-api] #error: GET /account - ENOENT: no such file or directory, open 'C:\IGTI\FullStack\Modulo04\my-bank-api\accounts.json' 
+2020-10-15T00:14:57.315Z [my-bank-api] #info: API started and file created.
+2020-10-15T00:19:56.204Z [my-bank-api] #info: API started.
+2020-10-15T00:20:37.821Z [my-bank-api] #info: API started.
+2020-10-15T00:20:48.387Z [my-bank-api] #error: POST /account - logger is not defined 
+2020-10-15T00:21:39.390Z [my-bank-api] #info: API started.
+2020-10-15T00:21:58.173Z [my-bank-api] #info: POST /account - {"id":1,"name":"Marilza da Silva","balance":600} 
+2020-10-15T00:22:50.571Z [my-bank-api] #info: API started.
+2020-10-15T00:22:55.583Z [my-bank-api] #info: GET /account
+2020-10-15T00:23:29.012Z [my-bank-api] #info: API started.
+2020-10-15T00:23:34.185Z [my-bank-api] #info: GET /account ID: 3
+2020-10-15T00:24:04.104Z [my-bank-api] #info: POST /account - {"id":2,"name":"William Pereira","balance":600} 
+2020-10-15T00:24:38.614Z [my-bank-api] #info: API started.
+2020-10-15T00:24:44.550Z [my-bank-api] #info: DELETE /account ID: 1
+2020-10-15T00:26:05.806Z [my-bank-api] #info: API started.
+2020-10-15T00:26:15.066Z [my-bank-api] #info: PUT /account - {"id":2,"name":"Ana Paula de Oliveira Paupitz","balance":500}
+2020-10-15T00:27:04.087Z [my-bank-api] #info: API started.
+2020-10-15T00:27:15.750Z [my-bank-api] #info: PATCH /account - {"id":2,"name":"Ana Paula de Oliveira Paupitz","balance":100000}
+2020-10-15T00:30:04.640Z [my-bank-api] #info: API started.
+2020-10-15T00:30:10.314Z [my-bank-api] #info: PATCH /account - {"id":2,"name":"Ana Paula de Oliveira Paupitz","balance":100000}
+2020-10-15T00:32:39.281Z [my-bank-api] #info: API started.
+2020-10-15T00:32:54.803Z [my-bank-api] #info: API started.
+2020-10-15T00:32:59.715Z [my-bank-api] #info: API started.
+2020-10-15T00:33:08.004Z [my-bank-api] #info: PATCH /account/updateBalance - {"id":2,"name":"Ana Paula de Oliveira Paupitz","balance":10000}
+2020-10-15T00:33:36.362Z [my-bank-api] #info: API started.
+2020-10-15T00:34:11.863Z [my-bank-api] #info: API started.
+2020-10-15T00:36:16.546Z [my-bank-api] #info: API started.
+2020-10-15T00:38:35.227Z [my-bank-api] #info: API started.
+2020-10-15T00:38:42.981Z [my-bank-api] #info: API started.
+2020-10-15T00:39:11.554Z [my-bank-api] #info: API started.
+2020-10-15T00:40:01.223Z [my-bank-api] #info: API started.
+2020-10-15T00:41:30.796Z [my-bank-api] #info: API started.
+2020-10-15T00:43:54.967Z [my-bank-api] #info: API started.
+2020-10-15T00:44:58.749Z [my-bank-api] #info: API started.
+2020-10-15T00:45:29.356Z [my-bank-api] #info: API started.
+2020-10-15T00:46:28.516Z [my-bank-api] #info: API started.
+2020-10-15T00:47:54.362Z [my-bank-api] #info: API started.
+2020-10-15T00:48:08.880Z [my-bank-api] #info: API started.
+2020-10-15T00:48:19.949Z [my-bank-api] #info: API started.
+2020-10-15T00:49:19.623Z [my-bank-api] #info: API started.
+2020-10-15T00:50:21.077Z [my-bank-api] #info: API started.
+2020-10-15T01:01:47.157Z [my-bank-api] #info: API started.
+2020-10-15T01:24:54.956Z [my-bank-api] #info: API started.

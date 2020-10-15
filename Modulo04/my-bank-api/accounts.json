@@ -1,15 +1,10 @@
 {
-  "nextId": 4,
+  "nextId": 3,
   "accounts": [
     {
       "id": 2,
       "name": "Ana Paula de Oliveira Paupitz",
-      "balance": 3000
-    },
-    {
-      "id": 3,
-      "name": "William Pereira",
-      "balance": 100
+      "balance": 10000
     }
   ]
 }
