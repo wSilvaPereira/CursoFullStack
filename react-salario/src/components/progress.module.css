@@ -1,0 +1,6 @@
+.myProgress {
+  width: 100%;
+  background-color: yellow;
+  display: flex;
+  flex-direction: row;
+}
