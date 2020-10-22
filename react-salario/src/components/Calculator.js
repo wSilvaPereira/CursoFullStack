@@ -28,24 +28,28 @@ export default class Calculator extends Component {
     return (
       <div>
         <div className={css.Flex}>
-          <div className={css.Item}>
+          {/* z-depth-1 */}
+          <div className={`${css.Item} z-depth-1`}>
             <span>Base INSS</span>
             <input type="text" readOnly value={formatNumber(baseINSS)} />
           </div>
-          <div className={css.Item}>
+          <div className={`${css.Item} z-depth-1`}>
             <span>Desconto INSS</span>
             <input type="text" readOnly value={discountINSSPercFull} />
           </div>
-          <div className={css.Item}>
+          <div className={`${css.Item} z-depth-1`}>
             <span>Base IRPF</span>
             <input type="text" readOnly value={formatNumber(baseIRPF)} />
           </div>
-          <div className={css.Item}>
+          <div className={`${css.Item} z-depth-1`}>
             <span>Desconto IRPF</span>
             <input type="text" readOnly value={discountIRPFPercFull} />
           </div>
         </div>
-        <div>
+        <div
+          className={`z-depth-1`}
+          style={{ fontWeight: 'bold', margin: '5px', padding: '5px' }}
+        >
           <span>Salário Líquido</span>
           <input type="text" readOnly value={netSalaryPercFull} />
         </div>

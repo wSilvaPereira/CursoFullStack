@@ -12,7 +12,7 @@ export default class Header extends Component {
   render() {
     const { filter, countryCount, totalPopulation } = this.props;
     return (
-      <div className={css.flexRow}>
+      <div className={`${css.flexRow} z-depth-1`}>
         <input
           placeholder="Filtro"
           type="text"
