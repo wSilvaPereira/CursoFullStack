@@ -52,9 +52,16 @@
     <link rel="stylesheet" href="./include/officeToHtml.css" />
   </head>
   <body>
-    <div id="resolte-contaniner"></div>
-    <input type="file" id="select_file" />
-    <!-- $("#resolte-contaniner").officeToHtml({ inputObjId: "select_file" }); -->
+    <div id="resolte-contaniner">
+      <input type="file" id="select_file" />
+    </div>
+    <script>
+      (function ($) {
+        $('#resolte-contaniner').officeToHtml({
+          inputObjId: 'Indicadores de Reingresso-Reprotocolo.docx',
+        });
+      });
+    </script>
     <script src="./js/script.js"></script>
   </body>
 </html>
