@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { formatNumber } from '../helpers/formatHelpers';
+import { formatNumber, formatPercent } from '../helpers/formatHelpers';
 import css from './calculator.module.css';
 
 export default class Calculator extends Component {
@@ -17,13 +17,13 @@ export default class Calculator extends Component {
 
     // prettier-ignore
     const discountINSSPercFull = 
-      `${formatNumber(discountINSS)} (${discountINSSPerc}%)`;
+      `${formatNumber(discountINSS)} (${formatPercent(discountINSSPerc)})`;
     // prettier-ignore
     const discountIRPFPercFull =
-      `${formatNumber(discountIRPF)} (${discountIRPFPerc}%)`;
+      `${formatNumber(discountIRPF)} (${formatPercent(discountIRPFPerc)})`;
     // prettier-ignore
     const netSalaryPercFull =
-      `${formatNumber(netSalary)} (${netSalaryPerc}%)`;
+      `${formatNumber(netSalary)} (${formatPercent(netSalaryPerc)})`;
 
     return (
       <div>
