@@ -4,8 +4,57 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <!--PDF-->
+    <link rel="stylesheet" href="./include/pdf/pdf.viewer.css" />
+    <script src="./include/pdf/pdf.js"></script>
+    <!--Docs-->
+    <script src="./include/docx/jszip-utils.js"></script>
+    <script src="./include/docx/mammoth.browser.min.js"></script>
+    <!--PPTX-->
+    <link rel="stylesheet" href="./include/PPTXjs/css/pptxjs.css" />
+    <link rel="stylesheet" href="./include/PPTXjs/css/nv.d3.min.css" />
+    <script
+      type="text/javascript"
+      src="./include/PPTXjs/js/filereader.js"
+    ></script>
+    <script type="text/javascript" src="./include/PPTXjs/js/d3.min.js"></script>
+    <script
+      type="text/javascript"
+      src="./include/PPTXjs/js/nv.d3.min.js"
+    ></script>
+    <script type="text/javascript" src="./include/PPTXjs/js/pptxjs.js"></script>
+    <script
+      type="text/javascript"
+      src="./include/PPTXjs/js/divs2slides.js"
+    ></script>
+    <!--All Spreadsheet -->
+    <link rel="stylesheet" href="./include/SheetJS/handsontable.full.min.css" />
+    <script
+      type="text/javascript"
+      src="./include/SheetJS/handsontable.full.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./include/SheetJS/xlsx.full.min.js"
+    ></script>
+    <!--Image viewer-->
+    <link
+      rel="stylesheet"
+      href="./include/verySimpleImageViewer/css/jquery.verySimpleImageViewer.css"
+    />
+    <script
+      type="text/javascript"
+      src="./include/verySimpleImageViewer/js/jquery.verySimpleImageViewer.js"
+    ></script>
+    <!--officeToHtml-->
+    <script src="./include/officeToHtml.js"></script>
+    <link rel="stylesheet" href="./include/officeToHtml.css" />
   </head>
   <body>
+    <div id="resolte-contaniner"></div>
+    <input type="file" id="select_file" />
+    <!-- $("#resolte-contaniner").officeToHtml({ inputObjId: "select_file" }); -->
     <script src="./js/script.js"></script>
   </body>
 </html>
