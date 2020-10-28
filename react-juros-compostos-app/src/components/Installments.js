@@ -8,13 +8,16 @@ export default function Installments({
   diferenca,
   difPercentual,
 }) {
+  // console.log(parseInt(id % 2));
+  const idAux = parseInt(id % 2);
+  const style = idAux === 1 ? styles.grayed : styles.normal;
   return (
     <div>
-      <div className={`${css.border} ${css.flex1}  z-depth-2`}>
+      <div className={`${css.border} ${css.flex1} z-depth-2`} style={style}>
         <span style={{ fontSize: '1.6rem' }}>
           <strong> {id} </strong>
         </span>
-        <div className={`${css.flex2}`}>
+        <div className={`${css.flex2} `}>
           <span>{formatNumber(novoValor)}</span>
           <span>{formatNumber(diferenca)}</span>
           <span>{formatPercent(difPercentual)}</span>
@@ -23,3 +26,12 @@ export default function Installments({
     </div>
   );
 }
+
+const styles = {
+  grayed: {
+    backgroundColor: 'lightgray',
+  },
+  normal: {
+    backgroundColor: 'white',
+  },
+};

@@ -29,7 +29,7 @@ export default function App() {
     };
     const interval = setInterval(() => {
       fecthVotes();
-    }, 1000);
+    }, 100);
     return () => {
       clearInterval(interval);
     };
@@ -46,6 +46,14 @@ export default function App() {
           previousVotes={previousVotes}
           previousPercentages={previousPercentages}
         />
+        <footer className="page-footer">
+          <div className="container">
+            <h5>William</h5>
+            <div className="footer-copyright">
+              <div className="container">direitos de c</div>
+            </div>
+          </div>
+        </footer>
       </div>
     );
   }
