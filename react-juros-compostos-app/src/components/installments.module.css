@@ -1,0 +1,28 @@
+.flex1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 5px;
+  justify-content: center;
+}
+.flex2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5px;
+  margin: 5px;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.border {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 5px;
+  width: 180px;
+}
+
+/* .investimento {
+} */

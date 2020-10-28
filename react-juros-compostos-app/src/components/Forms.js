@@ -7,20 +7,16 @@ export default function Forms({
   parcelas,
   onChangeInfos,
 }) {
-  function handleChange(event) {
-    let capital = 0;
-    let juros = 0;
-    let parcela = 0;
-    // console.log(event.target.value);
+  function handleChange() {
+    const capitalClass = document.querySelector('#capital');
+    const jurosClass = document.querySelector('#juros');
+    const parcelaClass = document.querySelector('#parcelas');
 
-    if (event.target.id === 'capital') {
-      capital = parseFloat(event.target.value);
-    } else if (event.target.id === 'juros') {
-      juros = parseFloat(event.target.value);
-    } else if (event.target.id === 'parcela') {
-      parcela = parseFloat(event.target.value);
-    }
-    console.log({ capital, juros, parcela });
+    let capital = parseFloat(capitalClass.value);
+    let juros = parseFloat(jurosClass.value);
+    let parcelas = parseFloat(parcelaClass.value);
+
+    onChangeInfos(capital, juros, parcelas);
   }
 
   return (
@@ -30,6 +26,7 @@ export default function Forms({
         <input
           id="capital"
           type="number"
+          max="0"
           max="100000"
           step="100"
           value={capitalInicial}
@@ -41,19 +38,21 @@ export default function Forms({
         <input
           id="juros"
           type="number"
-          max="100000"
-          step="100"
+          min="-12"
+          max="12"
+          step="0.1"
           value={jurosMensal}
           onChange={handleChange}
         />
       </div>
       <div className={css.item}>
-        <span>Parcela (meses)</span>
+        <span>Parcelas (meses)</span>
         <input
-          id="parcela"
+          id="parcelas"
           type="number"
-          max="100000"
-          step="100"
+          min="1"
+          max="36"
+          step="1"
           value={parcelas}
           onChange={handleChange}
         />
