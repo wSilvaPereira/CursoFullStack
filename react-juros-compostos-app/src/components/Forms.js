@@ -26,7 +26,7 @@ export default function Forms({
         <input
           id="capital"
           type="number"
-          max="0"
+          min="0"
           max="100000"
           step="100"
           value={capitalInicial}

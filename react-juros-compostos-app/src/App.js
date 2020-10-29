@@ -37,7 +37,10 @@ export default function App() {
   };
 
   return (
-    <div className=" container z-depth-2" style={{ padding: '60px' }}>
+    <div
+      className=" container z-depth-2"
+      style={{ padding: '30px', marginTop: '30px' }}
+    >
       <h1 style={{ textAlign: 'center' }}>React - Juros Compostos</h1>
       <Forms
         capitalInicial={capitalInicial}
