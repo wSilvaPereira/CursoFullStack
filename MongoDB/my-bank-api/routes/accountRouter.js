@@ -303,7 +303,7 @@ app.post('/recriaDados', async (req, res) => {
     const deletedAccounts = await accountsModel.deleteMany({});
 
     const jsonAccounts = await JSON.parse(
-      await fs.readFile('./datas/accounts-2.json')
+      await fs.readFile('./files/accounts-2.json')
     );
 
     const insertedAccounts = await accountsModel.insertMany(jsonAccounts);
