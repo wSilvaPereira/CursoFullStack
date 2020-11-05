@@ -1,5 +1,6 @@
 import express from 'express';
 import { accountsModel } from '../models/accountModel.js';
+import { promises as fs } from 'fs';
 
 const app = express();
 
@@ -291,6 +292,23 @@ app.put('/transferirClientesPrivate', async (req, res) => {
     const privatedAccounts = await accountsModel.find({ agencia: 99 });
 
     res.send(privatedAccounts);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+//RecriaDados
+app.post('/recriaDados', async (req, res) => {
+  try {
+    const deletedAccounts = await accountsModel.deleteMany({});
+
+    const jsonAccounts = await JSON.parse(
+      await fs.readFile('./datas/accounts-2.json')
+    );
+
+    const insertedAccounts = await accountsModel.insertMany(jsonAccounts);
+
+    res.send('Dados recriados com sucesso.');
   } catch (error) {
     res.status(500).send(error);
   }
