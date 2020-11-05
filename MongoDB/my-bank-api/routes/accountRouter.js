@@ -203,72 +203,95 @@ app.patch('/transferencia', async (req, res) => {
 // 9 - MediaSaldo
 //In - Agencia
 //Out - BalanceMedio
+app.get('/mediaSaldo', async (req, res) => {
+  try {
+    const agencia = req.body.agencia;
+
+    const avgAccounts = await accountsModel.aggregate([
+      { $match: { agencia: agencia } },
+      {
+        $group: {
+          _id: { agencia: '$agencia' },
+          mediaSaldo: {
+            $avg: '$balance',
+          },
+        },
+      },
+    ]);
+    res.send(avgAccounts);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
 
 // 10 - Cliente Menor Saldo
 //In - Limit
 //Out - {agencia, conta, saldo crescente}
+app.get('/clienteMenorSaldo/:qtde', async (req, res) => {
+  try {
+    const qtde = parseInt(req.params.qtde, 10);
+    const accounts = await accountsModel
+      .find({}, { _id: 0, name: 1, conta: 1, balance: 1 })
+      .sort({ balance: 1 })
+      .limit(qtde);
+    res.send(accounts);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
 
 // 11 - Clientes mais ricos
 //In - Limit
-//Out - {agencia, conta, nome, saldo descrescente}
+//Out - {agencia, conta, nome crescente, saldo descrescente}
+app.get('/clientesMaisRicos/:qtde', async (req, res) => {
+  try {
+    const qtde = parseInt(req.params.qtde, 10);
+    const accounts = await accountsModel
+      .find({}, { _id: 0, agencia: 1, conta: 1, name: 1, balance: 1 })
+      .sort({ balance: -1 })
+      .limit(qtde)
+      .sort({ balance: -1, name: 1 });
+    res.send(accounts);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
 
 // 12 - Tranferir cliente maior saldo agencia=99
 //In - null
 //Out - { clientes da agencia private}
+app.put('/transferirClientesPrivate', async (req, res) => {
+  try {
+    const agencias = await accountsModel.distinct('agencia');
+    const contas = [];
 
-// //Create
-// app.post('', async (req, res) => {
-//   try {
-//     const student = new accountModel(req.body);
-//     await student.save();
-//     res.send(student);
-//   } catch (error) {
-//     res.status(500).send(error);
-//   }
-// });
+    for (let i = 0; i < agencias.length; i++) {
+      if (agencias[i] !== 99) {
+        const conta = await accountsModel
+          .find({ agencia: agencias[i] })
+          .sort({ balance: -1 })
+          .limit(1);
+        contas.push(conta);
+      }
+    }
 
-// //RETRIEVE
-// app.get('', async (req, res) => {
-//   try {
-//     const student = await accountModel.find().sort({ name: 1 });
-//     res.send(student);
-//   } catch (error) {
-//     res.status(500).send(error);
-//   }
-// });
+    for (let i = 0; i < contas.length; i++) {
+      const id = contas[i][0]._id;
+      console.log(id);
+      const transferedAccount = await accountsModel.findByIdAndUpdate(
+        { _id: id },
+        { agencia: 99 },
+        { new: true }
+      );
+      console.log(transferedAccount);
+    }
 
-// //UPDATE
-// app.patch('/:id', async (req, res) => {
-//   try {
-//     const id = req.params.id;
-//     // console.log(id);
-//     // const teste = student;
-//     const student = await accountModel.findByIdAndUpdate(
-//       { _id: id },
-//       req.body,
-//       {
-//         new: true,
-//       }
-//     );
-//     res.send(student);
-//   } catch (error) {
-//     res.status(500).send(error);
-//   }
-// });
+    const privatedAccounts = await accountsModel.find({ agencia: 99 });
 
-// //DELETE
-// app.delete('/:id', async (req, res) => {
-//   try {
-//     const id = req.params.id;
-//     const student = await accountModel.findByIdAndDelete({ _id: id });
-//     if (!student) {
-//       res.send(404).send('Documento não encontrado na coleção');
-//     } else {
-//       res.status(200).send('Documento excluído com sucesso');
-//     }
-//   } catch (error) {
-//     res.status(500).send(error);
-//   }
-// });
+    res.send(privatedAccounts);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
 
 export { app as accountRouter };
