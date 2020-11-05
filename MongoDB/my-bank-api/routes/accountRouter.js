@@ -149,7 +149,9 @@ app.delete('', async (req, res) => {
       if (!deletedAccount) {
         res.send(404).send('Documento não encontrado na coleção');
       } else {
-        res.status(200).send('Documento excluído com sucesso');
+        const accounts = await accountsModel.find({ agencia: agencia });
+        // console.log(accounts.length);
+        res.status(200).send({ qtde: accounts.length });
       }
     }
   } catch (error) {
@@ -231,7 +233,7 @@ app.get('/clienteMenorSaldo/:qtde', async (req, res) => {
   try {
     const qtde = parseInt(req.params.qtde, 10);
     const accounts = await accountsModel
-      .find({}, { _id: 0, name: 1, conta: 1, balance: 1 })
+      .find({}, { _id: 0, agencia: 1, conta: 1, balance: 1 })
       .sort({ balance: 1 })
       .limit(qtde);
     res.send(accounts);
