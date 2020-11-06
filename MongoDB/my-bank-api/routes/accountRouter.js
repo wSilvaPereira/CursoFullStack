@@ -1,6 +1,7 @@
 import express from 'express';
 import { accountsModel } from '../models/accountModel.js';
 import { promises as fs } from 'fs';
+import { formatNumber } from '../helpers/formatHelpers.js';
 
 const app = express();
 
@@ -119,7 +120,7 @@ app.get('/getAgenciaContaBalance', async (req, res) => {
         },
       ]);
       const totalBalance = sumAccounts[0].total;
-      res.send({ agencia, conta, totalBalance });
+      res.send({ agencia, conta, totalBalance: formatNumber(totalBalance) });
     }
   } catch (error) {
     res.status(500).send(error);
@@ -151,7 +152,6 @@ app.delete('', async (req, res) => {
         res.send(404).send('Documento não encontrado na coleção');
       } else {
         const accounts = await accountsModel.find({ agencia: agencia });
-        // console.log(accounts.length);
         res.status(200).send({ qtde: accounts.length });
       }
     }
@@ -221,7 +221,17 @@ app.get('/mediaSaldo', async (req, res) => {
         },
       },
     ]);
-    res.send(avgAccounts);
+
+    if (avgAccounts.length > 0) {
+      const { _id, mediaSaldo } = avgAccounts[0];
+      const result = {
+        agencia: _id.agencia,
+        mediaSaldo: formatNumber(mediaSaldo),
+      };
+      res.send(result);
+    } else {
+      res.status(404).send({ agencia, mediaSaldo: formatNumber(0) });
+    }
   } catch (error) {
     res.status(500).send(error);
   }
@@ -280,13 +290,11 @@ app.put('/transferirClientesPrivate', async (req, res) => {
 
     for (let i = 0; i < contas.length; i++) {
       const id = contas[i][0]._id;
-      console.log(id);
       const transferedAccount = await accountsModel.findByIdAndUpdate(
         { _id: id },
         { agencia: 99 },
         { new: true }
       );
-      console.log(transferedAccount);
     }
 
     const privatedAccounts = await accountsModel.find({ agencia: 99 });
@@ -298,7 +306,7 @@ app.put('/transferirClientesPrivate', async (req, res) => {
 });
 
 //RecriaDados
-app.post('/recriaDados', async (req, res) => {
+app.post('/recriaDados', async (_, res) => {
   try {
     const deletedAccounts = await accountsModel.deleteMany({});
 

@@ -9,6 +9,10 @@ export default function App() {
   const [parcelas, setParcelas] = useState(24);
   const [listaParcelas, setListaParcelas] = useState([]);
 
+  window.addEventListener('beforeunload', () => {
+    console.log('fechou');
+  });
+
   useEffect(() => {
     let lista = [];
     let novoValor = capitalInicial;
