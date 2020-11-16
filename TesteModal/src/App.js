@@ -25,25 +25,48 @@ export default function App() {
     setActualValue(event.target.value);
   };
 
+  const handleClickButton = (event) => {
+    const divTeste = document.getElementById('testeClick');
+    // console.log(event.target);
+    divTeste.textContent = event.target.id;
+  };
+
   return (
     <div>
       <input type="button" value="Abrir Modal" onClick={handleClick} />
       <ModalTeste onClose={handleClose} isModalOpen={isModalOpen} />
-      <select
-        className="browser-default"
-        id="yearMonthSelect"
-        style={{
-          width: '100px',
-          textAlignLast: 'center',
-          height: '30px',
-        }}
-        onChange={selectHandleChange}
-        value={actualValue}
-      >
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-      </select>
+      <div style={{ display: 'flex', flexDirection: 'row' }}>
+        <a
+          className="waves-effect waves-light btn"
+          id="button1"
+          onClick={handleClickButton}
+        >
+          button1
+        </a>
+        <select
+          // className="browser-default"
+          id="yearMonthSelect"
+          style={{
+            width: '100px',
+            textAlignLast: 'center',
+            height: '38px',
+          }}
+          onChange={selectHandleChange}
+          value={actualValue}
+        >
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+        <a
+          className="waves-effect waves-light btn"
+          id="button2"
+          onClick={handleClickButton}
+        >
+          button2
+        </a>
+      </div>
+      <div id="testeClick"></div>
       {/* {isModalOpen && (
         <ModalTeste onClose={handleClose} isModalOpen={isModalOpen} />
       )} */}
