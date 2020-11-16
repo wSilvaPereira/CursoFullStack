@@ -1,5 +1,4 @@
 import dotenv from 'dotenv';
-
 import express from 'express';
 import { studentRouter } from './routes/studentRouter.js';
 import mongoose from 'mongoose';
@@ -10,11 +9,7 @@ dotenv.config();
 
 async function connectMongoose() {
   await mongoose.connect(
-    'mongodb+srv://' +
-      process.env.USERDB +
-      ':' +
-      process.env.PWDRD +
-      '@cluster0.pt00x.mongodb.net/grades?retryWrites=true&w=majority',
+    `mongodb+srv://${process.env.USERDB}:${process.env.PSWDB}@cluster0.pt00x.mongodb.net/grades?retryWrites=true&w=majority`,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
