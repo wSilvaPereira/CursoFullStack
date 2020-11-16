@@ -11,7 +11,11 @@ export default function App() {
 
   useEffect(() => {
     M.AutoInit();
-  }, []);
+  }, [actualValue]);
+
+  // useEffect(() => {
+  //   console.log(actualValue);
+  // }, [actualValue]);
 
   const handleClick = () => {
     setIsModalOpen(true);
@@ -22,13 +26,22 @@ export default function App() {
   };
 
   const selectHandleChange = (event) => {
+    // console.log('teste');
     setActualValue(event.target.value);
   };
 
   const handleClickButton = (event) => {
     const divTeste = document.getElementById('testeClick');
-    // console.log(event.target);
     divTeste.textContent = event.target.id;
+
+    let newSelect = actualValue;
+    console.log(event.target.id);
+    if (event.target.id === 'button1') {
+      newSelect--;
+    } else {
+      newSelect++;
+    }
+    setActualValue(newSelect);
   };
 
   return (
@@ -36,13 +49,14 @@ export default function App() {
       <input type="button" value="Abrir Modal" onClick={handleClick} />
       <ModalTeste onClose={handleClose} isModalOpen={isModalOpen} />
       <div style={{ display: 'flex', flexDirection: 'row' }}>
-        <a
+        <span
           className="waves-effect waves-light btn"
           id="button1"
           onClick={handleClickButton}
+          // href={}
         >
           button1
-        </a>
+        </span>
         <select
           // className="browser-default"
           id="yearMonthSelect"
@@ -53,18 +67,22 @@ export default function App() {
           }}
           onChange={selectHandleChange}
           value={actualValue}
+          // input={actualValue}
         >
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
         </select>
-        <a
+        <span
           className="waves-effect waves-light btn"
           id="button2"
           onClick={handleClickButton}
+          // href="#"
         >
           button2
-        </a>
+        </span>
       </div>
       <div id="testeClick"></div>
       {/* {isModalOpen && (
